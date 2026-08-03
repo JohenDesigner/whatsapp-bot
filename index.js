@@ -13,7 +13,9 @@ const GRAPH_API_VERSION = "v20.0";
 
 // Nome da empresa e opções do menu — edite aqui à vontade
 const NOME_ASSISTENTE = "Assistente Virtual";
-const NOME_EMPRESA = "Sua Empresa";
+const NOME_EMPRESA = "Johen Artes Gráfica";
+const LINK_SITE = "https://johendesigner.github.io/Johen-site/";
+const LINK_LOCALIZACAO = "https://www.google.com/maps/search/?api=1&query=Johen+Artes+Gr%C3%A1fica";
 
 // -------------------- 1. Verificação do Webhook (Meta) --------------------
 app.get("/webhook", (req, res) => {
@@ -76,9 +78,9 @@ async function enviarMenuPrincipal(to, nome) {
           {
             title: "Atendimento",
             rows: [
-              { id: "ajuda_comprar", title: "Ajuda para comprar" },
-              { id: "status_pedido", title: "Status do pedido" },
-              { id: "falar_atendente", title: "Falar com atendente" },
+              { id: "site", title: "Site" },
+              { id: "localizacao", title: "Localização" },
+              { id: "falar_atendente", title: "Falar comigo" },
             ],
           },
         ],
@@ -90,24 +92,23 @@ async function enviarMenuPrincipal(to, nome) {
 // -------------------- 4. Tratamento das opções escolhidas --------------------
 async function tratarSelecaoMenu(to, selectionId) {
   switch (selectionId) {
-    case "ajuda_comprar":
+    case "site":
       await enviarTexto(
         to,
-        "Claro! Me conta o que você está procurando que eu te ajudo a encontrar o produto certo. 🛍️"
+        `Aqui está o nosso site: ${LINK_SITE} 🎨`
       );
       break;
-    case "status_pedido":
+    case "localizacao":
       await enviarTexto(
         to,
-        "Beleza! Me envia o número do pedido ou o CPF/CNPJ usado na compra para eu consultar o status."
+        `É só clicar no link pra ver nossa localização: ${LINK_LOCALIZACAO} 📍`
       );
       break;
     case "falar_atendente":
       await enviarTexto(
         to,
-        "Sem problemas! Já estou te transferindo para um atendente humano. Aguarde só um momentinho. 🙂"
+        "Já recebi sua mensagem! Já já eu te respondo por aqui mesmo. 🙂"
       );
-      // Aqui você pode integrar com seu sistema de atendimento/CRM
       break;
     default:
       await enviarTexto(to, "Não entendi essa opção, pode tentar novamente?");
