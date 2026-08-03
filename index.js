@@ -77,7 +77,7 @@ async function enviarMenuPrincipal(to, nome) {
             title: "Atendimento",
             rows: [
               { id: "ajuda_comprar", title: "Ajuda para comprar" },
-              { id: "status_pedido", title: "Consultar status de um pedido" },
+              { id: "status_pedido", title: "Status do pedido" },
               { id: "falar_atendente", title: "Falar com atendente" },
             ],
           },
