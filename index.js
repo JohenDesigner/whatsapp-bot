@@ -78,9 +78,9 @@ async function enviarMenuPrincipal(to, nome) {
           {
             title: "Atendimento",
             rows: [
-              { id: "site", title: "Site" },
+              { id: "site", title: "Quero ver o catálogo" },
               { id: "localizacao", title: "Localização" },
-              { id: "falar_atendente", title: "Falar com John" },
+              { id: "falar_atendente", title: "Falar com o John" },
             ],
           },
         ],
