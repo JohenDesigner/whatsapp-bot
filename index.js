@@ -80,7 +80,7 @@ async function enviarMenuPrincipal(to, nome) {
             rows: [
               { id: "site", title: "Site" },
               { id: "localizacao", title: "Localização" },
-              { id: "falar_atendente", title: "Falar_com_John" },
+              { id: "falar_atendente", title: "Falar com John" },
             ],
           },
         ],
